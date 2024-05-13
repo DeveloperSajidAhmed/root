@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+.banner {
+    width: 100%;
+    background-color: #000053;
+    padding: 5px;
+    color: white;
+    text-align: center;
+}
