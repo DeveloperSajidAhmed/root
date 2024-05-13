@@ -45,3 +45,15 @@ body {
     clear: both;
     display: table;
 }
+.details {
+    background-color: #f2f2f2;
+    margin: 10px 0;
+}
+.details li {
+    border: 1px solid red;
+    border-radius: 10px 15px;
+    margin: 10px 0;
+}
+.details li:hover{
+    background-color: #04AA6D;
+}
