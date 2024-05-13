@@ -11,3 +11,22 @@ body {
     color: white;
     text-align: center;
 }
+.navbr {
+    overflow: hidden;
+    background-color: #1c1c84;
+}
+.navbr a {
+    float: left;
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.active_nav {
+    background-color: #04AA6D;
+
+}
+.navbr a:hover {
+    background-color: #ddd;
+    color: black;
+}
