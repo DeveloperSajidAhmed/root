@@ -31,8 +31,17 @@ body {
     color: black;
 }
 .head {
-    background-color: #;
+    background-color: #f1f1f1;
+    padding: 6px 6px;
+    text-align: justify;
 }
 .img1 {
-    
+    float: left;
+    margin-right: 20px;
+
+}
+.head::after {
+    content: "";
+    clear: both;
+    display: table;
 }
