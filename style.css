@@ -1,0 +1,30 @@
+section {
+    padding: 20px;
+}
+.card-body:hover {
+    background-color: rgb(23, 9, 214);
+    color: white;
+}
+.card-body a {
+    text-decoration: none;
+    color: black;
+}
+i {
+    font-size: large;
+}
+a {
+    float: left;
+    display: block;
+}
+.col {
+    overflow: hidden;
+
+}
+.col div {
+    background-color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    height: 130px;
+    border-radius: 25px;
+    border: 3px solid red;
+    
+}
