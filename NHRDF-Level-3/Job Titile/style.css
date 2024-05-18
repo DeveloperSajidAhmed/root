@@ -1,0 +1,49 @@
+.Start {
+    border: 3px solid green;
+    height: 100px;
+}
+.Left {
+    border: 3px solid blue;
+    height: 370px;
+    width: 18%;
+    float: left;
+    margin-top: 5px;
+}
+.Right {
+    border: 3px solid rgb(128, 0, 75);
+    height: 370px;
+    width: 80%;
+    float: right;
+    margin-top: 5px;
+}
+.Child-1 {
+    border: 3px solid rgb(23, 0, 128);
+    height: 50px;
+    width: 78%;
+    /* float: none; */
+    display: block;
+    margin: 5px auto 0 auto;
+    
+}
+.Child-2 {
+    border: 3px solid rgb(0, 119, 128);
+    height: 150px;
+    width: 20%;
+    float: left;
+    margin: 62px 0 0 116px;
+
+}
+.Child-3 {
+    border: 3px solid rgb(128, 0, 75);
+    height: 150px;
+    float: right;
+    width: 20%;
+    margin: 62px 110px 0 0;
+}
+.End {
+    border: 3px solid red;
+    height: 100px;
+    width: 100%;
+    float: left;
+    margin-top: 5px;
+}
