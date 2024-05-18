@@ -1,0 +1,6 @@
+ctrl alt d
+
+father 100persent
+ctrl m
+
+image > adjustment > selective color

@@ -1,0 +1,101 @@
+একাধিক GitHub অ্যাকাউন্ট পরিচালনা করুন
+August 1, 2023 by Developer Sajid
+ 
+আজ আমরা শিখবো কিভাবে একাধিক গিটহাব অ্যাকাউন্ট পরিচালনা করতে হয় একটি কম্পিউটার বা ল্যাপটপ ব্যবহার করে?
+
+আমরা যদি একাধিক একাধিক গিটহাব অ্যাকাউন্ট পরিচালনা করতে চাই তাহলে আমাদের পরপর যে কয়টি ধাপ অনুসরণ করতে হবে।
+
+আমাদের দেখতে হবে যে কম্পিউটার বা ল্যাপটপ এ আগে থেকে existing SSH keys Add করা আছে কি না।
+যদি SSH keys Add করা না থাকে তাহলে SSH keys Generating করতে হবে।
+Adding SSH key to the ssh-agent
+আপনার GitHub অ্যাকাউন্টে একটি নতুন SSH কী যোগ করতে হবে।
+Checking for existing SSH keys
+প্রথমে আমরা দেখবো যে আমরা যে ডিভাইস টি ব্যবহার করতেছি এই কম্পিউটার বা ল্যাপটপ কি আগে থেকে কোন SSH Key কি Add করা আছে?
+
+SSH Key কি Add করা আছে কিনা এটা দেখার জন্য নিচের কোড টি রান করুন।
+
+ls -al ~/.ssh
+কোডটি রান করলে SSH Key Add করা থাকলে নিচের দেওয়া ছবির মতো দেখাবে।
+
+My image
+
+আর যদি SSH Key Add করা না থাকলে নিচের দেওয়া ছবির মতো দেখাবে।
+
+My image
+অথবা, এমন দেখাবে।
+
+My image
+আমি দরে নিলাম আপনি নতুন তাই কোন SSH Key Add করা থাকবে না এটাই স্বাভাবিক।
+
+Generating a new SSH key
+এখন আমাদের কাজ SSH key Add করা।
+
+SSH Key কি Add করার জন্য নিচের কোড টি রান করুন।
+
+ssh-keygen -t rsa -C "admin@mrsajid.com"
+
+replace id_rsa t0
+account name like DeveloperSajid
+Adding it to the ssh-agent
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/username
+clip < ~/.ssh/id_rsa.pub
+cat ~/.ssh/id_rsa.pub
+
+# Default Account (Main DeveloperSajid GitHub account)
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/DeveloperSajid
+  
+# Other Aaccount (Secondary Account-2 GitHub account)
+Host Account-2
+    HostName github.com
+    IdentityFile ~/.ssh/Account-2
+
+# Other Aaccount (Secondary Account-3 GitHub account)
+Host Account-3
+    HostName github.com
+    IdentityFile ~/.ssh/Account-3
+
+# Other Aaccount (Secondary Account-4 GitHub account)
+Host Account-4
+    HostName github.com
+    IdentityFile ~/.ssh/Account-4
+
+# Other Aaccount (Secondary Account-5 GitHub account)
+Host Account-5
+    HostName github.com
+    IdentityFile ~/.ssh/Account-5
+Create SSH keys for each account. এটি আপনাকে প্রতিবার আপনার username এবং password প্রবেশ না করেই GitHub-এ clone and push repositories করার অনুমতি দেবে।
+Add your SSH keys to the SSH agent. This will make it easier to switch between accounts when you’re working on different projects. আপনি যখন বিভিন্ন projects এ কাজ করছেন তখন এটি switch between accounts সহজ করে তুলবে৷
+Create a .ssh/config file. This file will allow you to specify different host aliases for each of your GitHub accounts. This will make it easier to remember which account you’re using when you’re cloning or pushing repositories.
+Use personal access tokens (PATs) for each account. PATs are a more secure way to access your GitHub repositories than using your username and password. You can create a PAT with specific permissions for each account, so you only have to provide the PAT when you need to access a specific repository.
+Use different browsers or operating systems for each account. This can help you to keep your accounts separate and to avoid accidentally logging into the wrong account.
+Here are some additional tips for managing multiple GitHub accounts:
+
+Use a password manager to store your passwords for each account.
+প্রতিটি অ্যাকাউন্টের জন্য two-factor authentication (2FA) সেট আপ করুন।
+Be careful about what information you share with each account.
+Keep your SSH keys and PATs safe.
+I hope these instructions help you to effectively manage your multiple GitHub accounts.
+
+Yes, of course! Managing multiple GitHub accounts can be a common requirement, especially for developers who work on personal and professional projects or contribute to various organizations. Here’s a step-by-step guide on how to effectively manage multiple GitHub accounts:
+
+Set Up SSH Keys (Optional but Recommended):
+Generate separate SSH keys for each GitHub account you want to manage. This step is optional, but using SSH keys adds an extra layer of security and convenience when working with multiple accounts.
+Configure SSH Config (Optional but Recommended):
+If you’re using SSH keys, you can set up an SSH config file to manage multiple accounts easily. Open the SSH config file (~/.ssh/config) and add entries for each account:bashCopy code# Personal GitHub account Host github.com HostName github.com User git IdentityFile ~/.ssh/personal_rsa # Work GitHub account Host work.github.com HostName github.com User git IdentityFile ~/.ssh/work_rsa Replace personal_rsa and work_rsa with the paths to your respective SSH key files.
+Clone Repositories:
+Clone the repositories from your different GitHub accounts to your local machine using the appropriate URLs. For example:bashCopy code# Personal GitHub repository git clone git@github.com:yourusername/personal-repo.git # Work GitHub repository git clone git@work.github.com:workusername/work-repo.git
+Configure Git User and Email:
+Inside each cloned repository, set your Git username and email address using the following commands (replace with your information):arduinoCopy codegit config user.name "Your Name" git config user.email "youremail@example.com"
+Use Git Remotes:
+For each repository, ensure you are pushing and pulling from the correct GitHub account by specifying the remotes when needed. You can do this using the git remote add command. For example:bashCopy code# Personal GitHub remote git remote add origin-personal git@github.com:yourusername/personal-repo.git # Work GitHub remote git remote add origin-work git@work.github.com:workusername/work-repo.git You can then use origin-personal and origin-work as the remote names when pushing or pulling.
+Switching Between Accounts:
+When you want to work on a specific repository, ensure that you have the correct remote set up for that account. Use the git remote set-url command to change the remote if needed. For example:bashCopy code# Switch to personal account git remote set-url origin git@github.com:yourusername/personal-repo.git # Switch to work account git remote set-url origin git@work.github.com:workusername/work-repo.git
+Managing Credentials (Optional but Recommended):
+To manage your GitHub credentials, you can use a credential helper that stores different sets of credentials for each account. For instance, the Git Credential Manager Core (GCM Core) supports Windows, macOS, and Linux.Alternatively, you can use the git config command with the credential.helper setting to configure individual credential helpers for different accounts.
+Use Git Branches (Optional):
+If you’re working on multiple features or tasks simultaneously, consider using Git branches to keep your work separate and organized within each repository.
+By following these steps, you should be able to effectively manage multiple GitHub accounts and repositories without any confusion or accidental cross-account activity. Always ensure you are pushing and pulling from the correct remotes and using the appropriate credentials for each account.

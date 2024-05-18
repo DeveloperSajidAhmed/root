@@ -1,0 +1,48 @@
+.btn {
+    color: white;
+    background-color: green;
+    border-radius: 20px;
+    border: 2px solid red;
+    text-align: center;
+    height: 500px;
+    /* width: fit-content; */
+    background-image: url("../img/imga.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#div {
+    color: white;
+    background-color: green;
+    border-radius: 5;
+    text-align: right;
+    border-radius: 5px;
+    width: 90%;
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+
+    
+}
+
+.headerclass {
+    color: green;
+    background-color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-color: aqua;
+    width: fit-content;
+    text-transform: lowercase;
+}
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 10px;
+  }
+  a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: none;
+  }

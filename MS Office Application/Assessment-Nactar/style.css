@@ -1,0 +1,24 @@
+header {
+    background-color: #333333;
+    color: white;
+}
+li {
+    text-decoration: none;
+    float: left;
+    /* background-color: #111111;
+    color: aqua; */
+}
+li a {
+    text-decoration: none;
+    color: white;
+    padding: 16px;
+    
+}
+li a:hover {
+    background-color: #111111;
+
+}
+ul {
+    display: block;
+    overflow: hidden;
+}
