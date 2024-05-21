@@ -1,0 +1,9 @@
+.card-text {
+    height: 200px;
+    overflow: hidden;
+    text-align: justify;
+}
+.justify {
+    text-align: center;
+    height: 100px;
+}
